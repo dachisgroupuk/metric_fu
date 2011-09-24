@@ -140,7 +140,12 @@ module MetricFu
       if render_as_txmt_protocol?
         "txmt://open/?url=file://#{filename}" << (line ? "&line=#{line}" : "")
       else
-       "file://#{filename}"
+        link_prefix = MetricFu.configuration.link_prefix
+        if link_prefix
+          "#{link_prefix}/#{name.gsub(/:.*$/, '')}"
+        else
+          "file://#{filename}"
+        end
       end
     end
 

@@ -146,9 +146,9 @@ module MetricFu
       @file_globs_to_ignore = []
 
       @verbose = false
-
       @graph_engine = :bluff # can be :bluff or :gchart
 
+      @link_prefix = nil
       @darwin_txmt_protocol_no_thanks = false
       @syntax_highlighting = true #Can be set to false to avoid UTF-8 issues with Ruby 1.9.2 and Syntax 1.0
     end
